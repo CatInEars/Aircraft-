@@ -1,0 +1,33 @@
+input[type='text'] {
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 50px;
+    font-size: 18px;
+}
+
+input[type='button'] {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+select {
+    margin-top: 30px;
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.result div ul li {
+    margin-top: 10px;
+    font-size: 20px;
+    list-style-type: none;
+}
+
+span {
+    color: red;
+    display: block;
+    margin-top: 15px;
+    font-size: 18px;
+}

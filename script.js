@@ -114,11 +114,13 @@ $('input[type="button"]').click(() => {
         }
 
         let noneReisis = false;
+        $('.result ul li').remove();
 
         for(let i = 0; i < resis.length; i++) {
-            $('.result ul li').remove();
+            console.log('тут пока что гуд');
             if(resis[i].number == number) {
                 $('.result ul').append(`<li>Из ${resis[i].from} в ${resis[i].to}, номер рейса: ${resis[i].number}, статус: ${resis[i].status}</li>`);
+                break;
             }else if(i == resis.length - 1) {
                 if(!noneReisis) {
                     $('.result ul').append('<li>Таких рейсов нет, памянем<li>');
@@ -132,12 +134,19 @@ $('input[type="button"]').click(() => {
 let checkboxStatus = false;
 
 $('input[type="checkbox"]').click(() => {
+    $('.result ul li').remove();
     if(checkboxStatus) {
         $('select').prop('disabled', true);
         checkboxStatus = false;
     }else {
         $('select').prop('disabled', false);
         checkboxStatus = true;
+        let selectValue = $('select').val();
+        let res = sortSelect(selectValue);
+
+        for(let i = 0; i < res.length; i++) {
+            $('.result ul').append(`<li>Из ${res[i].from} в ${res[i].to}, номер рейса: ${res[i].number}, статус: ${res[i].status}</li>`);
+        }
     }
 }); // end click
 
